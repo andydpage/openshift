@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ANDY_TEST_SERVICE
+  name: andytestservice
 spec:
   type: ClusterIP
   ports:
@@ -9,4 +9,4 @@ spec:
     targetPort: 8181
     protocol: TCP
   selector:
-    app: ANDY_TEST_SERVICE
+    app: andytestservice
