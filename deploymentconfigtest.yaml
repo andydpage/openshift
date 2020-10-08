@@ -1,12 +1,16 @@
 apiVersion: v1
-kind: Service
-metadata:
-  name: andytestservice
-spec:
-  type: ClusterIP
-  ports:
-  - port: 8181
-    targetPort: 8181
-    protocol: TCP
-  selector:
-    app: andytestservice
+  kind: Route
+  metadata:
+    name: andytestroute
+    labels:
+      app: andytestroute
+  spec:
+    host: host
+    path: /
+    port:
+      targetPort: 8181
+    to:
+      kind: Service
+      name: andytestservice
+      weight: 100
+    wildcardPolicy: None
