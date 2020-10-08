@@ -1,21 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
+  name: andytestservice
 spec:
-  replicas: 3
+  type: ClusterIP
+  ports:
+  - port: 8181
+    targetPort: 8181
+    protocol: TCP
   selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+    app: andytestservice
