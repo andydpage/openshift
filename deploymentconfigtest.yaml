@@ -1,0 +1,16 @@
+- apiVersion: v1
+  kind: Route
+  metadata:
+    name: ANDY_TEST_ROUTE
+    labels:
+      app: ANDY_TEST_ROUTE
+  spec:
+    host: localhost
+    path: /
+    port:
+      targetPort: 8181
+    to:
+      kind: Service
+      name: TEST_SERVICE
+      weight: 100
+    wildcardPolicy: None
