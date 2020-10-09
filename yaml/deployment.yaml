@@ -62,7 +62,7 @@ objects:
         name: ${APP_NAME}
       spec:
         containers:
-        - image: "${REGISTRY_URL}"
+        - image: ${REGISTRY_URL}
           name: ${APP_NAME}
           env:
             - name: SPRING_PROFILES_ACTIVE
